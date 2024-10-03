@@ -8,7 +8,7 @@
  * 
  */
 
- package com.example;
+ package com.sound_game;
 
  import java.util.*;
  import jm.music.data.*;

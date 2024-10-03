@@ -6,9 +6,9 @@
  * 
  */
 
- package com.example;
+ package com.sound_game;
  
-import java.util.*;
+import java.util.ArrayList;
 
 // send the MIDI elsewhere to play the notes
 public class MelodyPlayer {
