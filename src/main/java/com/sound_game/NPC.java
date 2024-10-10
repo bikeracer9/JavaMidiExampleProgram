@@ -45,8 +45,8 @@ public abstract class NPC extends Particle_Object{
     {
         if(isHit(enemy))
         {
-            reverseDir();
-            melodies.start(midiIindex);
+                reverseDir();
+                melodies.start(midiIindex);   
         }
     }
 }

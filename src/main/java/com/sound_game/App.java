@@ -3,6 +3,12 @@
  * Class: Main Class for Hello World for CC3 Class Projects streaming MIDI, etc.
  * Description: Demonstration of MIDI file manipulations, etc. & 'MelodyPlayer' sequencer, 2024 - add processing/interactivity
  * 
+ * Prescott Lau
+ * October 10th, 2024
+ * This is the Main class for the Java MIDI Project Game.
+ * This is based from Courtney Brown's Hello World for CC3 Class Projects 
+ * to help setup the MIDI functions.
+ * 
  */
 
  package com.sound_game;

@@ -125,7 +125,7 @@ public class Particle_Container extends GameController {
     
             for(int i = 0; i < enemies.size(); i++)
             {
-                for(int j = 0; j < enemies.size(); j++)
+                for(int j = i; j < enemies.size(); j++)
                 {
                     if (enemies.get(i) != enemies.get(j))
                     {
@@ -156,6 +156,33 @@ public class Particle_Container extends GameController {
             setAvatarLocation(main.mouseX, main.mouseY);
         }
     
+
+        //make the game harder! — Pressing the letter 'Q' on the keyboard changes the alpha value of the particles.
+        //Pressing the 'W' key resets it
+        public void keyPressed()
+        {
+            if (main.keyPressed)
+            {
+                if(main.key == 'Q' || main.key == 'q')
+                {
+                    for(int i = 0; i < npc.size(); i++)
+                    {
+                        npc.get(i).alphaValue = npc.get(i).alphaValue / 2;
+                        //particle_Objects.get(i).getAlpha() = particle_Objects.get(i).getAlpha() - 50;
+                    }
+                }
+
+                if(main.key == 'E' || main.key == 'e')
+                {
+                    for(int i = 0; i < npc.size(); i++)
+                    {
+                        npc.get(i).resetAlpha();
+                    }
+                    
+                }
+            }
+        }
+
         /*
          * Resets the game!
          */

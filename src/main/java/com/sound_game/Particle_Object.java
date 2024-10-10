@@ -40,8 +40,8 @@ public class Particle_Object {
         x = main.random(main.width);
         y = main.random(main.height);
 
-        xVel = main.random(-1,10);
-        yVel = main.random(-1,10);
+        xVel = main.random(-2,10);
+        yVel = main.random(-2,10);
     }
 
     void display()
@@ -111,6 +111,24 @@ public class Particle_Object {
     {
         return size;
     }
+
+    /*
+    *  This is the getter method to get the value of the object's alpha value. 
+    */
+    float getAlpha()
+    {
+        return alphaValue;
+    }
+
+
+    /*
+     * This is the setter method to set the value of the objects alpha value.
+     */
+
+     public void resetAlpha()
+     {
+        alphaValue = 255;
+     }
 
     /*
     *  Method to see if objects touch each other.
