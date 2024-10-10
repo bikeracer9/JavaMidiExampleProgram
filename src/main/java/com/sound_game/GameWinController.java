@@ -6,11 +6,9 @@
 
 package com.sound_game;
 
-import processing.core.PApplet;
-
 public class GameWinController extends GameController{
     
-    GameWinController(PApplet main_)
+    GameWinController(App main_)
     {
         super(main_);
     }

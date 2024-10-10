@@ -9,8 +9,6 @@ package com.sound_game;
 
 import java.util.ArrayList;
 
-import processing.core.PApplet;
-
 public class Particle_Container extends GameController {
     //PApplet main; //the main class, which has all the processing functionality.
 
@@ -26,14 +24,14 @@ public class Particle_Container extends GameController {
     int loot_count = 3;
 
     ArrayList<Enemy> enemies;
-    int enemy_count = 15;
+    int enemy_count = 5; //15
 
     ArrayList<Power_Up> PowerUp;
     int PowerUpCount = 2;
     
         ArrayList<Particle_Object> particle_Objects;
     
-        public Particle_Container(PApplet main_) 
+        public Particle_Container(App main_) 
         {
             super(main_);
             init(); //initialize all the objects
@@ -123,7 +121,6 @@ public class Particle_Container extends GameController {
             {
                 avatar.collisions(npc.get(i));
                 npc.get(i).collision(avatar);
-                
             }
     
             for(int i = 0; i < enemies.size(); i++)
@@ -132,7 +129,7 @@ public class Particle_Container extends GameController {
                 {
                     if (enemies.get(i) != enemies.get(j))
                     {
-                        enemies.get(i).collision(enemies.get(j));
+                        enemies.get(i).collision(enemies.get(j), 13);
                     }
                 }   
             }

@@ -24,7 +24,7 @@ import processing.core.PApplet;
 	 static String filePath = "mid"  + sys.getSeparator(); // path to the file folder -- you can change this to your file
 																 // location/name
 
-	String[] midiFiles = {"enemies", "health"};
+	String[] midiFiles = {"Alpha_Value", "Enemy_Touch_Avatar", "Game_Over", "Game_Win", "Power_Up_Gain_Health", "Power_Up_Gain_Coins", "Power_Up_Lose_Coins", "Power_Up_Lose_Health", "Touch_Coins", "Touch_Power_Up", "Wall_Coins" , "Wall_Enemies", "Wall_Power_Up", "Enemy_Enemy"};
  
 	MelodyManager melodyManager = new MelodyManager();
 
@@ -94,5 +94,11 @@ import processing.core.PApplet;
 	 public void mouseDragged() 
 	 {
 		 game.get(curState).mouseDragged();
+	 }
+
+	 //provide access to melodyManager
+	 public MelodyManager getMelodyManager()
+	 {
+		return melodyManager;
 	 }
  }

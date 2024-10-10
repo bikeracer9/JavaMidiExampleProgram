@@ -6,8 +6,6 @@
 
 package com.sound_game;
 
-import processing.core.PApplet;
-
 public class Avatar extends Particle_Object{
 
     int health = 3; //health, determines when the game ends (loses).
@@ -15,7 +13,7 @@ public class Avatar extends Particle_Object{
     float  random_number = (int)main.random(0,4);
     String message = ""; // prints out a message for power up object.
 
-    Avatar(PApplet main_)
+    Avatar(App main_)
     {
         super(main_, 30, main_.color(0,255,0), 255);
         x = main.width/2;

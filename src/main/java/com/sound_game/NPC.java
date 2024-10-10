@@ -5,10 +5,8 @@
 */
 package com.sound_game;
 
-import processing.core.PApplet;
-
-public class NPC extends Particle_Object{
-    NPC(PApplet main_, float size_, int color_)
+public abstract class NPC extends Particle_Object{
+    NPC(App main_, float size_, int color_)
     {
         super(main_, size_, color_, 255);
         spawn();
@@ -29,19 +27,26 @@ public class NPC extends Particle_Object{
         main.ellipse(x, y, size, size);
     }
 
-    void collision(Avatar avatar)
+    //checks to see if there was a collision with the avatar & plays index of midi file..
+    void collision(Avatar avatar, int midiIindex)
     {
         if(isHit(avatar))
         {
             spawn();
+            melodies.start(midiIindex);
         }
     }
 
-    void collision(Enemy enemy)
+    //subclasses must inherit this function!
+    abstract void collision(Avatar avatar);
+
+    //checks to see if there was a collision with the enemy & plays index of midi file.
+    void collision(Enemy enemy, int midiIindex)
     {
         if(isHit(enemy))
         {
             reverseDir();
+            melodies.start(midiIindex);
         }
     }
 }

@@ -7,10 +7,10 @@
 
 package com.sound_game;
 
-import processing.core.PApplet;
+// import processing.core.PApplet;
 
 public class Particle_Object {
-    PApplet main; //processing functionality
+    App main; //processing functionality
 
     float x,y; //location
     int color; //color of the Particle Object
@@ -19,13 +19,17 @@ public class Particle_Object {
     int alphaValue; //value that changes the Particle Objects opacity. 
     boolean hit; //if the game object has been hit.
 
+    MelodyManager melodies = null;
+
     //initializes everything
-    Particle_Object(PApplet main_, float size_, int color_, int a)
+    Particle_Object(App main_, float size_, int color_, int a)
     {
         main = main_;
         size = size_;
         color = color_;
         alphaValue = a;
+
+        melodies = main_.getMelodyManager();
     }    
 
     /*
@@ -113,7 +117,7 @@ public class Particle_Object {
     */
     boolean isHit(Particle_Object object)
     {
-        float distance = PApplet.dist(x, y, object.getX(), object.getY());
+        float distance = App.dist(x, y, object.getX(), object.getY());
         return (distance < (size/2 + object.getSize()/2));
     }
 

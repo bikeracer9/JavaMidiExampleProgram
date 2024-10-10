@@ -11,13 +11,16 @@
  */
 package com.sound_game;
 
-import processing.core.PApplet;
-
 public class Power_Up extends NPC {
 
-    Power_Up(PApplet main_)
+    Power_Up(App main_)
     {
         super(main_, 25, main_.color(0,128,255));
     }
 
+    //plays Touch_Power_Up sound when the Avatar touches a Power Up.
+    void collision(Avatar avatar)
+    {
+        super.collision(avatar, 9);
+    }
 }

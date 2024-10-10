@@ -5,10 +5,8 @@
  */
 package com.sound_game;
 
-import processing.core.PApplet;
-
 public abstract class GameController {
-    PApplet main; //reference to the main class
+    App main; //reference to the main class
     
     static final int DO_NOT_CHANGE = -1;
     static final int GAME_PLAY = 0;
@@ -17,7 +15,7 @@ public abstract class GameController {
 
     int nextController = DO_NOT_CHANGE;
 
-    GameController(PApplet main_)
+    GameController(App main_)
     {
         main = main_;
     }

@@ -5,10 +5,8 @@
  */
 package com.sound_game;
 
-import processing.core.PApplet;
-
 public class GameEndController extends GameController {
-    GameEndController(PApplet main_)
+    GameEndController(App main_)
     {
         super(main_);
     }

@@ -5,12 +5,16 @@
  */
 package com.sound_game;
 
-import processing.core.PApplet;
-
 public class Enemy extends NPC
 {
-    Enemy(PApplet main_)
+    Enemy(App main_)
     {
         super(main_, 45, main_.color(255,0,0));
+    }
+
+    //plays Enemy_Touch_Avatar sound when the Avatar touches an Enemy.
+    void collision(Avatar avatar)
+    {
+        super.collision(avatar, 1);
     }
 }
