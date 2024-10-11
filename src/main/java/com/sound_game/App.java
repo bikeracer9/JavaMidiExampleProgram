@@ -30,9 +30,31 @@ import processing.core.PApplet;
 	 static String filePath = "mid"  + sys.getSeparator(); // path to the file folder -- you can change this to your file
 																 // location/name
 
-	String[] midiFiles = {"Alpha_Value", "Enemy_Touch_Avatar", "Game_Over", "Game_Win", "Power_Up_Gain_Health", "Power_Up_Gain_Coins", "Power_Up_Lose_Coins", "Power_Up_Lose_Health", "Touch_Coins", "Touch_Power_Up", "Wall_Coins" , "Wall_Enemies", "Wall_Power_Up", "Enemy_Enemy"};
+	String[] midiFiles = {"Alpha_Value", "Enemy_Touch_Avatar", "Game_Over", "Game_Win", "Power_Up_Gain_Health", "Power_Up_Gain_Coins", "Power_Up_Lose_Coins", "Power_Up_Lose_Health", "Touch_Coins", "Touch_Power_Up", "Wall_Coins" , "Wall_Enemies", "Wall_Power_Up", "Enemy_Enemy", "Fake", "Alpha_Value_Reset"};
  
 	MelodyManager melodyManager = new MelodyManager();
+
+	//Static constants that name the different MIDI files for the subclasses.
+	
+	static final int ALPHA_VALUE_D_MID = 0;
+	static final int ENEMY_AVATAR_MID = 1;
+	static final int GAME_OVER_MID = 2;
+	static final int GAME_WIN_MID = 3;
+	static final int PU_GAIN_HEALTH_MID = 4;
+	static final int PU_GAIN_COINS_MID = 5;
+	static final int PU_LOSE_COINS_MID = 6;
+	static final int PU_LOSE_HEALTH_MID = 7;
+	static final int AVATAR_COINS_MID = 8;
+	static final int AVATAR_POWER_UP_MID = 9;
+	static final int WALL_COINS_MID = 10;
+	static final int WALL_ENEMIES_MID = 11;
+	static final int WALL_POWER_UP_MID = 12;
+	static final int ENEMY_ENEMY_MID = 13;
+	static final int FAKE_MID = 14;
+	static final int ALPHA_VALUE_RESET_MID = 15;
+	
+	
+
 
 	//add the game stuff!
 	ArrayList<GameController> game = new ArrayList<>();

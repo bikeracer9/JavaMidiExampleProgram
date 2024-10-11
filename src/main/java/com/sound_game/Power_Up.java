@@ -21,6 +21,31 @@ public class Power_Up extends NPC {
     //plays Touch_Power_Up sound when the Avatar touches a Power Up.
     void collision(Avatar avatar)
     {
-        super.collision(avatar, 9);
+        super.collision(avatar, App.FAKE_MID);
     }
+
+    void move()
+    {
+        super.move();
+        if(y > (main.height - size/2)) //if the value of the ball on the Y axis is greater than
+        {                   //the bottom of the screen value, then the ball will change directions.
+            melodies.start(App.WALL_POWER_UP_MID);
+        }
+
+        if(y < 0) //if the value of the ball on the Y axis is greater than
+        {        //the top of the screen value then, the ball will change directions.
+            melodies.start(App.WALL_POWER_UP_MID);
+        }
+
+        if(x > (main.width - size/2)) //if the value of the ball on the X axis is greater than
+        {                   //the right of the screen value, then the ball will change directions.
+            melodies.start(App.WALL_POWER_UP_MID);
+        }
+
+        if(x < (0 + size/2)) //if the value of the ball on the X axis is greater than
+        {        //the left of the screen value then, the ball will change directions.
+            melodies.start(App.WALL_POWER_UP_MID);
+        } 
+    }
+
 }

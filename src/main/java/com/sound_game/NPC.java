@@ -27,6 +27,11 @@ public abstract class NPC extends Particle_Object{
         main.ellipse(x, y, size, size);
     }
 
+    void move()
+    {
+        super.move();
+    }
+
     //checks to see if there was a collision with the avatar & plays index of midi file..
     void collision(Avatar avatar, int midiIindex)
     {
@@ -46,7 +51,7 @@ public abstract class NPC extends Particle_Object{
         if(isHit(enemy))
         {
                 reverseDir();
-                melodies.start(midiIindex);   
+                melodies.start(App.ENEMY_ENEMY_MID);   
         }
     }
 }

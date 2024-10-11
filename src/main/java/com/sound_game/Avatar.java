@@ -62,12 +62,14 @@ public class Avatar extends Particle_Object{
                     health += 2;
                     message = "Gave you 2 extra Lives!";
                     System.out.println("Health = " + health);
+                    melodies.start(App.PU_GAIN_HEALTH_MID);
                 }
                 else if(random_number == 1)
                 {
                     coins += 3;
                     message = "Gave you 3 extra Coins!";
                     System.out.println("Coins = " + coins);
+                    melodies.start(App.PU_GAIN_COINS_MID);
                 }
                 else if(random_number == 2)
                 {
@@ -77,17 +79,20 @@ public class Avatar extends Particle_Object{
                     health -= 2;
                     message = "Took away 2 Lives!";
                     System.out.println("Health = " + health);
+                    melodies.start(App.PU_LOSE_HEALTH_MID);
                 }
                 else if(random_number == 3)
                 {
                     coins -= 3;
                     message = "Took away 3 Coins!";
                     System.out.println("Coins = " + coins);
+                    melodies.start(App.PU_LOSE_COINS_MID);
                 }
                 else if(random_number == 4 || random_number == 5  || random_number == 6  || random_number == 7)
                 {
                     message = "";
                     System.out.println("Nothing happened...");
+                    melodies.start(App.AVATAR_POWER_UP_MID);
                 }
                 System.out.println("Message = " + message);
                 random_number = (int)main.random(0,4);

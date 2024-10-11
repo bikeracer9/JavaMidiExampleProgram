@@ -1,5 +1,5 @@
 /*
- * Prescott Lau
+ * Prescott Lau -- BASED OFF OF COURTNEY BROWN'S VIMEO VIDEOS FROM CC3 Class Project.
  * October 3rd 2024
  * Manages the Melodies that the game uses when different in game events happen.
  * 

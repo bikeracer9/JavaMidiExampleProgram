@@ -16,18 +16,19 @@ public class Particle_Container extends GameController {
      * Below are all the ArrayLists for each of the different objects.
      */
 
+    MelodyManager melodies = null; 
     Avatar avatar;
 
     ArrayList<NPC> npc;
 
     ArrayList<Loot> loot;
-    int loot_count = 3;
+    int loot_count = 9;
 
     ArrayList<Enemy> enemies;
-    int enemy_count = 5; //15
+    int enemy_count = 8; //15
 
     ArrayList<Power_Up> PowerUp;
-    int PowerUpCount = 2;
+    int PowerUpCount = 3;
     
         ArrayList<Particle_Object> particle_Objects;
     
@@ -42,6 +43,8 @@ public class Particle_Container extends GameController {
      */
         public void init()
         {    
+            melodies = main.getMelodyManager();
+
             avatar = new Avatar(main);
             npc = new ArrayList();
             loot = new ArrayList();
@@ -90,11 +93,13 @@ public class Particle_Container extends GameController {
     
             if( avatar.getHealth() <= 0 || avatar.getCoins() <= -5)//if the player dies, player loses or if the player gets a negative amount of coins
             {
+                melodies.start(App.GAME_OVER_MID);
                 nextController = GameController.GAME_END; //draws the end game screen
             }
     
             if( avatar.getCoins() >= 25) //if the player has more than 15 coins, player wins
             {
+                melodies.start(App.GAME_WIN_MID);
                 nextController = GameController.GAME_WIN; //draws the win game screen
             }
         }
@@ -129,7 +134,7 @@ public class Particle_Container extends GameController {
                 {
                     if (enemies.get(i) != enemies.get(j))
                     {
-                        enemies.get(i).collision(enemies.get(j), 13);
+                        enemies.get(i).collision(enemies.get(j), App.ENEMY_ENEMY_MID);
                     }
                 }   
             }
@@ -168,6 +173,7 @@ public class Particle_Container extends GameController {
                     for(int i = 0; i < npc.size(); i++)
                     {
                         npc.get(i).alphaValue = npc.get(i).alphaValue / 2;
+                        melodies.start(App.ALPHA_VALUE_D_MID);
                         //particle_Objects.get(i).getAlpha() = particle_Objects.get(i).getAlpha() - 50;
                     }
                 }
@@ -176,7 +182,11 @@ public class Particle_Container extends GameController {
                 {
                     for(int i = 0; i < npc.size(); i++)
                     {
-                        npc.get(i).resetAlpha();
+                        if(npc.get(i).alphaValue < 255)
+                        {
+                            npc.get(i).resetAlpha();
+                            melodies.start(App.ALPHA_VALUE_RESET_MID);
+                        }
                     }
                     
                 }
