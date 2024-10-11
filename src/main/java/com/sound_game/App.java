@@ -9,6 +9,25 @@
  * This is based from Courtney Brown's Hello World for CC3 Class Projects 
  * to help setup the MIDI functions.
  * 
+ * INSTRUCTIONS for game & keyboard use:
+ *		
+ *	Pressing on the 'Q' key makes the game harder by changing -
+ *	- the Alpha Value of all the Particle Objects! 
+ *
+ * 	If you want to reset the Alpha Value of all the Particle Objects,
+ * 	then press the "E" key on your keyboard. 
+ * 
+ * 	In doing both of these, each one should make different sounds!
+ * 
+ * 	Play the game as normally, click and drag your mouse to move the avatar around the 
+ * 	screen and try to get 25 Yellow Coins to win the game. But beware of the Red Enemies,
+ *	you only have 3 lives!
+ * 	
+ * 	If you are in the gambling mood, move towards a Blue Power-Up Ball. You might be rewarded 
+ * 	with lives or coins, or you might get them taken from you, or worse of all 
+ * 	— nothing will happen! 
+ * 
+ * 	Sounds, all created by me, will play during different events!
  */
 
  package com.sound_game;
